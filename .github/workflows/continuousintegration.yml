@@ -50,11 +50,11 @@ jobs:
   discord:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Run Discord Webhook
         uses: Sniddl/discord-comits@v1.6
         with:
-          webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           template: "avatar-with-link"
           include-extras: true
